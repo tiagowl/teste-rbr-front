@@ -56,7 +56,11 @@ export default function Home() {
         router.push("/")
       }
     }catch(error){
-
+      return toast({
+        title: `${error}`,
+        status: 'error',
+        isClosable: true,
+      });
     }
   }
 

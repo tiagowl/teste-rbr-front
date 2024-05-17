@@ -3,5 +3,5 @@ export default interface Employee{
     name: string;
     role: string;
     department: string;
-    admissionDate: Date;
+    admissionDate: string;
 }

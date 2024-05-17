@@ -19,7 +19,7 @@ import { object, string } from "yup";
 
 export default function Home() {
 
-  const [employee, setEmployee] = useState<Partial<Employee>>({name: "", role: "", department: ""});
+  const [employee, setEmployee] = useState<Partial<Employee>>({name: "", role: "", department: "", admissionDate: ""});
   const params = useParams();
   const toast = useToast();
   const router = useRouter();
@@ -38,7 +38,11 @@ export default function Home() {
           setEmployee(response.data);
         }
       }catch(error){
-
+        return toast({
+          title: `${error}`,
+          status: 'error',
+          isClosable: true,
+        });
       }
 
     }
@@ -78,7 +82,11 @@ export default function Home() {
         router.push("/")
       }
     }catch(error){
-
+      return toast({
+        title: `${error}`,
+        status: 'error',
+        isClosable: true,
+      });
     }
   }
 
@@ -134,6 +142,10 @@ export default function Home() {
                 <FormControl mb="6" >
                     <FormLabel>Departamento</FormLabel>
                     <Input type='text' value={employee?.department} onChange={(e)=> setEmployee({...employee, department: e.target.value})} borderRadius="3px" />
+                </FormControl>
+                <FormControl mb="6" >
+                    <FormLabel>Data de admissão</FormLabel>
+                    <Input type='date' value={employee?.admissionDate} onChange={(e)=> setEmployee({...employee, admissionDate: e.target.value})} borderRadius="3px" />
                 </FormControl>
                 <Flex w="100%" justifyContent="flex-end" >
                     <Button bg="gray.900" color="white" onClick={()=> updateEmployee()} fontSize="sm" >Salvar</Button>

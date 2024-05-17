@@ -8,4 +8,6 @@ Depois de ter instalado as dependencias do projeto, rodar o comando:
 
 - Npm run dev
 
+Repositório do backend: https://github.com/tiagowl/teste-rbr-back
+
 

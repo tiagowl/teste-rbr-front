@@ -73,7 +73,7 @@ export default function Home() {
     try{
       const response = await api.put(`/employees/${params?.id}`, employee);
 
-      if(response.status === 200){
+      if(response.status === 201){
         toast({
           title: 'Funcionário editado com sucesso!',
           status: 'success',

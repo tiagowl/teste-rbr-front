@@ -47,7 +47,7 @@ export default function Home() {
     try{
       const response = await api.post("/employees", employee);
 
-      if(response.status === 200){
+      if(response.status === 201){
         toast({
           title: 'Funcionário criado com sucesso!',
           status: 'success',

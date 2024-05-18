@@ -140,7 +140,7 @@ export default function Home() {
         <Flex px="5" w="100%" bg="white" h="60px" alignItems="center" justifyContent="space-between" >
           <Text fontWeight="medium" fontSize="xl" >Funcionários</Text>
           <Flex>
-            <Select bg="gray.50" value={sort} onChange={(e)=>setSort(e.target.value)} size="sm" border="none" w="10rem" >
+            <Select bg="gray.50" placeholder="Ordenar por" value={sort} onChange={(e)=>setSort(e.target.value)} size="sm" border="none" w="10rem" >
               <option value='name'>Nome</option>
               <option value='role'>Cargo</option>
               <option value='department'>Departamento</option>
